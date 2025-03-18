@@ -1,0 +1,315 @@
+/* Cores principais */
+:root {
+    --preto: #000000;
+    --branco: #ffffff;
+    --magenta: #bc2649;  /* Magenta principal */
+    --cinza-escuro: #333333;
+    --cinza-medio: #666666;
+    --sombra: rgba(0, 0, 0, 0.2);
+}
+
+/* Corpo */
+body {
+    background-color: var(--preto);
+    color: var(--branco);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Container principal */
+.container {
+    max-width: 480px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--cinza-escuro);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px var(--sombra);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Formulário */
+.input-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color: var(--magenta);
+}
+
+input {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--cinza-medio);
+    font-size: 16px;
+    background: var(--cinza-escuro);
+    color: var(--branco);
+    text-align: left;
+    box-shadow: inset 0 2px 4px var(--sombra);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--magenta);
+    box-shadow: 0 4px 8px var(--sombra);
+}
+
+/* Erros */
+.error {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.invalid + .error {
+    display: block;
+}
+
+.invalid {
+    border-color: red;
+}
+
+/* Botão */
+button {
+    margin-top: 30px;
+    padding: 12px 50px;
+    background: var(--magenta);
+    border: none;
+    color: var(--branco);
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 5px 10px rgba(188, 38, 73, 0.2);
+}
+
+button:hover {
+    background: #9c1b3c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(188, 38, 73, 0.3);
+}
+
+/* Checkbox e Aceito */
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 8px; /* Espaçamento entre o checkbox e o texto */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.checkbox-container input {
+    margin: 0; /* Remove qualquer margem padrão */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--magenta);
+}
+
+.checkbox-container label {
+    margin: 0; /* Remove qualquer margem padrão */
+    font-size: 16px;
+    color: var(--branco);
+    line-height: 1; /* Para melhor alinhamento vertical */
+}
+
+/* Link para WhatsApp */
+.whatsapp-link {
+    color: var(--magenta);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--magenta);
+}
+
+.whatsapp-link:hover {
+    color: #9c1b3c;
+    text-shadow: 0 0 8px var(--magenta);
+    transform: scale(1.05);
+    background: var(--preto);
+}
+
+/* Animação de conclusão */
+.hidden {
+    display: none;
+}
+
+.confirm-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--branco);
+    opacity: 0;
+    animation: fadeInMove 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.checkmark-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--magenta);
+    margin: 20px auto;
+    animation: scaleUp 0.6s ease-out forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkmark {
+    width: 40px;
+    height: 40px;
+    background: var(--magenta);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: checkmark-animation 0.5s 0.3s ease-in-out forwards;
+}
+
+@keyframes checkmark-animation {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+.whatsapp-nome {
+    color: #25D366; /* Verde do WhatsApp */
+    font-weight: bold;
+    display: inline-flex; /* Alinha o texto e o ícone lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 6px; /* Espaço entre o ícone e o texto */
+}
+
+/* Estilo para o texto menor e ícone ajustado */
+.confirm-text.small {
+    font-size: 18px; /* Diminui o tamanho do texto */
+    color: var(--branco);
+    margin-top: 10px;
+    line-height: 1.5; /* Mantém a leitura clara */
+}
+
+.whatsapp-nome {
+    color: #25D366; /* Verde do WhatsApp */
+    font-weight: bold;
+    display: inline-flex; /* Alinha o texto e o ícone lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 4px; /* Espaço menor entre o texto e o ícone */
+    font-size: 14px; /* Ajusta para acompanhar o tamanho do texto */
+}
+
+.whatsapp-icon {
+    width: 18px; /* Ícone menor */
+    height: 18px;
+    fill: #25D366; /* Cor do ícone */
+    display: inline-block;
+}
+
+.whatsapp-nome:hover .whatsapp-icon {
+    fill: #128C7E; /* Muda a cor do ícone no hover */
+}
+
+.whatsapp-nome:hover {
+    color: #128C7E; /* Muda a cor do texto no hover */
+    transition: color 0.3s, fill 0.3s;
+}
+/* Estilo para o container da logo */
+.logo-container {
+    text-align: center; /* Centraliza a logo na tela */
+    margin-bottom: 20px; /* Espaçamento entre a logo e o formulário */
+    margin-top: 20px;
+}
+
+/* Estilo para a logo */
+.logo {
+    width: 400px; /* Dobramos o tamanho para 400px */
+    max-width: 100%; /* Evita problemas em telas menores */
+    height: auto; /* Mantém a proporção correta */
+    border-radius: 12px; /* Bordas levemente arredondadas para um visual moderno */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombras suaves para destaque */
+}
+
+/* Estilo para o formulário (container) */
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--cinza-escuro);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px var(--sombra);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.hidden {
+    display: none !important; /* Garante que o elemento desapareça completamente */
+    background: none; /* Remove o fundo */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove espaçamentos internos */
+    height: 0; /* Remove qualquer altura residual */
+}
+
+
+#titulo {
+    margin-top: 0px; /* Altere o valor conforme desejado */
+}

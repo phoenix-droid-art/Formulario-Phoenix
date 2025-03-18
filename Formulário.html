@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Phoenix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+<!-- Logo destacada fora da box -->
+<div class="logo-container">
+    <img src="logo.png" alt="Phoenix Logo" class="logo">
+</div>
+
+<div class="container">
+    <h1 id="titulo">CADASTRE-SE!</h1>
+    <form id="formulario">
+        <div class="input-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="John Doe" required aria-required="true" aria-describedby="error-nome">
+            <span class="error" id="error-nome">Por favor, preencha seu nome.</span>
+        </div>
+
+        <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="johndoe@gmail.com" required aria-required="true" aria-describedby="error-email">
+            <span class="error" id="error-email">Por favor, insira um e-mail válido.</span>
+        </div>
+
+        <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{4,5}-\d{4}" required aria-required="true" aria-describedby="error-telefone">
+            <span class="error" id="error-telefone">Por favor, insira seu número de telefone.</span>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="aceita" required aria-required="true">
+            <label for="aceita">Aceito receber conteúdos e promoções.</label>
+        </div>
+        <span class="error" id="error-aceita">É necessário aceitar os termos.</span>
+
+        <button type="submit">ENVIAR</button>
+    </form>
+</div>
+
+
+<div id="confirmacao" class="hidden">
+    <div class="checkmark-container">
+        <div class="checkmark"></div>
+    </div>
+    <h3 class="confirm-text">CADASTRO REALIZADO COM SUCESSO!</h3>
+    <p class="confirm-text small">
+        Que tal participar da nossa comunidade no <span class="whatsapp-nome">
+            WhatsApp
+            <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.071.526 4.03 1.453 5.747L0 24l6.419-1.454A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.229 17.086c-.238.665-1.356 1.226-1.886 1.296-.483.065-1.082.118-4.309-1.421a14.328 14.328 0 0 1-5.222-5.222c-1.539-3.227-1.486-3.826-1.421-4.309.07-.53.631-1.648 1.296-1.886.324-.116.745-.039.986.212l1.715 1.715a.612.612 0 0 1 .147.68c-.15.335-.537 1.054-.761 1.339a.523.523 0 0 0 .063.703l2.297 2.298a.523.523 0 0 0 .703.063c.285-.224 1.004-.61 1.339-.761a.612.612 0 0 1 .68.147l1.715 1.715c.251.251.328.662.212.986z"/>
+            </svg>
+        </span>?
+    </p>
+    <a href="https://wa.me/seu-grupo" target="_blank" class="whatsapp-link">Entrar Agora.</a>
+</div>
+
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
